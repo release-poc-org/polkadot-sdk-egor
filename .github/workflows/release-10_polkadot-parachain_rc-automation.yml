@@ -58,7 +58,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ steps.compute_tag.outputs.version }}
         with:
-          assignees: EgorPopelyaev, coderobe, chevdor
+          assignees: EgorPopelyaev
           filename: .github/ISSUE_TEMPLATE/release-polkadot-parachain-client.md
 
       - name: Matrix notification to ${{ matrix.channel.name }}
