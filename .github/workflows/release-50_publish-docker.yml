@@ -273,8 +273,8 @@ jobs:
           # TODO: The owner should be used below but buildx does not resolve the VARs
           # TODO: It would be good to get rid of this GHA that we don't really need.
           tags: |
-            parity/polkadot:latest
-            parity/polkadot:${{ needs.fetch-latest-debian-package-version.outputs.polkadot_apt_version }}
+            ${{ env.DOCKER_OWNER }}/polkadot:latest
+            ${{ env.DOCKER_OWNER }}/polkadot:${{ needs.fetch-latest-debian-package-version.outputs.polkadot_apt_version }}
           build-args: |
             VCS_REF=${{ github.ref }}
             POLKADOT_VERSION=${{ needs.fetch-latest-debian-package-version.outputs.polkadot_apt_version }}
