@@ -264,3 +264,30 @@ function check_gpg() {
     echo "Checking GPG Signature for $1"
     gpg --no-tty --verify -q $1.asc $1
 }
+
+# Get last rc tag if exists, else set it to {version}-rc1
+get_last_rc_tag() {
+  version=$1
+
+  git tag -l
+  last_rc=$(git tag -l "$version-rc*" | sort -V | tail -n 1)
+  echo "$last_rc"
+}
+
+# Compute next rc tag bast on the previous rc tag and version
+compute_next_rc_tag() {
+  last_rc=$1
+  version=$2
+
+  if [ -n "$last_rc" ]; then
+        suffix=$(echo "$last_rc" | grep -Eo '[0-9]+$')
+        echo $suffix
+        ((suffix++))
+        echo $suffix
+        echo "new_tag=$version-rc$suffix" >> $GITHUB_OUTPUT
+        echo "first_rc=false" >> $GITHUB_OUTPUT
+      else
+        echo "new_tag=$version-rc1" >> $GITHUB_OUTPUT
+        echo "first_rc=true" >> $GITHUB_OUTPUT
+      fi
+}
