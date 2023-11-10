@@ -26,6 +26,7 @@ jobs:
 
       - name: Get release product
         id: get_rel_product
+        shell: bash
         run: |
           . ./.github/scripts/common/lib.sh
 
