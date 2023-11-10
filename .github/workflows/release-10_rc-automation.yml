@@ -32,10 +32,8 @@ jobs:
 
           current_branch=$(git branch --show-current)
           echo $current_branch
-          [[ "$current_branch" =~ "polkadot-parachain" ]] && product=polkadot-parachain
+          [[ "$current_branch" =~ "polkadot-parachain" ]] && echo "product=$product" >> $GITHUB_OUTPUT
           #product=$(get_product_name)
-          
-          echo "product=$product" >> $GITHUB_OUTPUT
 
 
       - name: Compute next rc tag for polkadot
