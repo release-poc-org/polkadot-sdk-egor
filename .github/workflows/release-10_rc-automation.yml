@@ -28,6 +28,7 @@ jobs:
         id: get_rel_product
         shell: bash
         run: |
+          ls -la
           . ./.github/scripts/common/lib.sh
 
           product=$(get_product_name)
