@@ -30,9 +30,8 @@ jobs:
         run: |
           . ./.github/scripts/common/lib.sh
 
-          #product=$(get_product_name)
-          product=polkadot-parachain
-          echo "Release product: $product"
+          product=$(get_product_name)
+          #product=polkadot-parachain
           echo "product=$product" >> $GITHUB_OUTPUT
 
 
