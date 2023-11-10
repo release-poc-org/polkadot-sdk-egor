@@ -30,10 +30,8 @@ jobs:
         run: |
           . ./.github/scripts/common/lib.sh
 
-          current_branch=$(git branch --show-current)
-          echo $current_branch
-          [[ "$current_branch" =~ "release-polkadot" ]] && echo "product=polkadot" >> $GITHUB_OUTPUT
-          #product=$(get_product_name)
+          product=$(get_product_name)
+          echo "product=$product" >> $GITHUB_OUTPUT
 
 
       - name: Compute next rc tag for polkadot
