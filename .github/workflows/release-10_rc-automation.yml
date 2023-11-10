@@ -28,13 +28,10 @@ jobs:
         id: get_rel_product
         shell: bash
         run: |
-          . ./.github/scripts/common/lib.sh
-
-          #product=$(get_product_name)
-          #echo "Release product: $product"
           current_branch=$(git branch --show-current)
-          echo "Current branch:"
+          echo "Current branch: $current_branch"
           [[ "$current_branch" =~ "release-polkadot" ]] && echo "product=polkadot" >> $GITHUB_OUTPUT
+          [[ "$current_branch" =~ "release-cumulus" ]] && echo "product=polkadot-parachain" >> $GITHUB_OUTPUT
 
 
       - name: Compute next rc tag for polkadot
@@ -50,8 +47,10 @@ jobs:
           echo "version=$version" >> $GITHUB_OUTPUT
 
           last_rc=$(get_latest_rc_tag $version polkadot)
+          echo "Last rc: $last_rc"
           if [ -n "$last_rc" ]; then
             suffix=$(increment_rc_tag $last_rc)
+            echo "New suffix: $suffix"
             echo "new_tag=$version-rc$suffix" >> $GITHUB_OUTPUT
             echo "first_rc=false" >> $GITHUB_OUTPUT
           else

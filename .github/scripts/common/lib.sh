@@ -303,15 +303,3 @@ function increment_rc_tag() {
   ((suffix++))
   echo $suffix
 }
-
-# Get product name based on current branch
-# (going to be either pokadot or polkadot-parachain)
-function get_product_name() {
-	current_branch=$(git branch --show-current)
-	if [[ "$current_branch" =~ "release-polkadot" ]]; then
-    product="polakdot"
-	elif [[ "$current_branch" =~ "release-cumulus"  ]]; then
-    product="polakdot-parachain"
-  fi
-  echo "$product"
-}
