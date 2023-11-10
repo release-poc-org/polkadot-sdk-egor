@@ -300,7 +300,7 @@ function increment_rc_tag() {
   last_rc=$1
 
   suffix=$(echo "$last_rc" | grep -Eo '[0-9]+$')
-  echo $suffix
+  #echo $suffix
   ((suffix++))
   echo $suffix
 }
