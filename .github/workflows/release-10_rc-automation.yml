@@ -30,8 +30,11 @@ jobs:
         run: |
           current_branch=$(git branch --show-current)
           echo "Current branch: $current_branch"
-          [[ "$current_branch" =~ "release-polkadot" ]] && echo "product=polkadot" >> $GITHUB_OUTPUT
-          [[ "$current_branch" =~ "release-cumulus" ]] && echo "product=polkadot-parachain" >> $GITHUB_OUTPUT
+          if [[ "$current_branch" =~ "release-polkadot" ]]; then
+            echo "product=polkadot" >> $GITHUB_OUTPUT
+          elif [[ "$current_branch" =~ "release-cumulus" ]]; then
+            echo "product=polkadot-parachain" >> $GITHUB_OUTPUT
+          fi
 
 
       - name: Compute next rc tag for polkadot
