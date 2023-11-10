@@ -30,13 +30,15 @@ jobs:
         run: |
           . ./.github/scripts/common/lib.sh
 
-          product=$(get_product_name)
+          #product=$(get_product_name)
           #echo "Release product: $product"
-          echo "PRODUCT=$product" >> $GITHUB_ENV
+          current_branch=$(git branch --show-current)
+          [[ "$current_branch" =~ "release-polkadot" ]] && product="polakdot"
+          echo "product=$product" >> $GITHUB_OUTPUT
 
 
       - name: Compute next rc tag for polkadot
-        if: ${{ github.env.PRODUCT == 'polkadot' }}
+        if: ${{ steps.get_rel_product.outputs.product == 'polkadot' }}
         id: compute_tag_polkadot
         shell: bash
         run: |
@@ -47,7 +49,7 @@ jobs:
           echo "$version"
           echo "version=$version" >> $GITHUB_OUTPUT
 
-          last_rc=$(get_latest_rc_tag $version $PRODUCT)
+          last_rc=$(get_latest_rc_tag $version polkadot)
           if [ -n "$last_rc" ]; then
             suffix=$(increment_rc_tag $last_rc)
             echo "new_tag=$version-rc$suffix" >> $GITHUB_OUTPUT
@@ -58,7 +60,7 @@ jobs:
           fi
 
       - name: Compute next rc tag for polkadot-parachain
-        if: ${{ github.env.PRODUCT == 'polkadot-parachain' }}
+        if: ${{ steps.get_rel_product.outputs.product == 'polkadot-parachain' }}
         id: compute_tag_cumulus
         shell: bash
         run: |
@@ -69,7 +71,7 @@ jobs:
           echo "$version"
           echo "version=$version" >> $GITHUB_OUTPUT
 
-          last_rc=$(get_latest_rc_tag $version $PRODUCT)
+          last_rc=$(get_latest_rc_tag $version polkadot-parachain)
           if [ -n "$last_rc" ]; then
             suffix=$(increment_rc_tag $last_rc)
             echo "New suffix: $suffix"
