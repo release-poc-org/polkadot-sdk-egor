@@ -30,7 +30,8 @@ jobs:
         run: |
           . ./.github/scripts/common/lib.sh
 
-          git branch --show-current
+          current_branch=$(git branch --show-current)
+          echo $current_branch
 
           #product=$(get_product_name)
           product=polkadot-parachain
