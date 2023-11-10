@@ -30,8 +30,10 @@ jobs:
         run: |
           . ./.github/scripts/common/lib.sh
 
-          product=$(get_product_name)
-          #product=polkadot-parachain
+          git branch
+
+          #product=$(get_product_name)
+          product=polkadot-parachain
           echo "product=$product" >> $GITHUB_OUTPUT
 
 
