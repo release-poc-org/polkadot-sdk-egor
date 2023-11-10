@@ -286,7 +286,6 @@ function get_latest_rc_tag() {
   version=$1
   product=$2
 
-  git tag -l
   if [[ "$product" == "polkadot" ]]; then
     last_rc=$(git tag -l "$version-rc*" | sort -V | tail -n 1)
   elif [[ "$product" == "polkadot-parachain"  ]]; then
