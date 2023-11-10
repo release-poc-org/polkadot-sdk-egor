@@ -4,8 +4,8 @@ on:
     branches:
       # Catches release-polkadot-v1.2.3, release-v1.2.3-rc1, etc
       - release-v[0-9]+.[0-9]+.[0-9]+*
-      - release-parachains-v[0-9]+
-      - release-polkadot-v[0-9]+
+      - release-parachains-v[0-9]+*
+      - release-polkadot-v[0-9]+*
 
   workflow_dispatch:
 
