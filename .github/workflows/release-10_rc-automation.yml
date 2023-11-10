@@ -28,10 +28,10 @@ jobs:
         id: get_rel_product
         shell: bash
         run: |
-          ls -la
           . ./.github/scripts/common/lib.sh
 
-          product=$(get_product_name)
+          #product=$(get_product_name)
+          product=polkadot-parachain
           echo "Release product: $product"
           echo "product=$product" >> $GITHUB_OUTPUT
 
