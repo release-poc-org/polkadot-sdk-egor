@@ -32,7 +32,7 @@ jobs:
 
           current_branch=$(git branch --show-current)
           echo $current_branch
-          [[ "$current_branch" =~ "polkadot-parachain" ]] && echo "product=$product" >> $GITHUB_OUTPUT
+          [[ "$current_branch" =~ "release-polkadot" ]] && echo "product=polkadot" >> $GITHUB_OUTPUT
           #product=$(get_product_name)
 
 
