@@ -304,3 +304,5 @@ function increment_rc_tag() {
   ((suffix++))
   echo $suffix
 }
+
+#test
