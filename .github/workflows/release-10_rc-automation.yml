@@ -50,7 +50,7 @@ jobs:
           echo "version=$version" >> $GITHUB_OUTPUT
 
           last_rc=$(get_latest_rc_tag $version polkadot)
-          echo "Last rc: $last_rc"
+
           if [ -n "$last_rc" ]; then
             suffix=$(increment_rc_tag $last_rc)
             echo "new_tag=$version-rc$suffix" >> $GITHUB_OUTPUT
