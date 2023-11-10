@@ -30,6 +30,7 @@ jobs:
           . ./.github/scripts/common/lib.sh
 
           product=$(get_product_name)
+          echo "Release product: $product"
           echo "product=$product" >> $GITHUB_OUTPUT
 
 

@@ -309,6 +309,7 @@ function increment_rc_tag() {
 # (going to be either pokadot or polkadot-parachain)
 function get_product_name() {
 	current_branch=$(git branch --show-current)
+  echo "Current branch: $current_branch"
 	[[ "$current_branch" =~ "release-polkadot" ]] && echo "polakdot"
 	[[ "$current_branch" = "release-cumulus"  ]] && echo "polakdot-parachain"
 }
