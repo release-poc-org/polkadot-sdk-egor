@@ -35,6 +35,9 @@ jobs:
 
       - name: Build frame-omni-bencher binary
         run: |
+          sudo apt update
+          sudo apt install -y protobuf-compiler
+
           cargo build --locked --release -p frame-omni-bencher
           target/release/frame-omni-bencher --version
 
