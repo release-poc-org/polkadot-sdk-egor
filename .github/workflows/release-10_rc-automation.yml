@@ -49,10 +49,10 @@ jobs:
 
           # Get last rc tag if exists, else set it to {version}-rc1
           # TODO: find a way to get latest release tag
-          version=$(get_polkadot_node_version_from_code)
+          version=v$(get_polkadot_node_version_from_code)
           #version=$(get_version_from_ghref ${GITHUB_REF})
           echo "$version"
-          echo "version=v$version" >> $GITHUB_OUTPUT
+          echo "version=$version" >> $GITHUB_OUTPUT
 
           last_rc=$(get_latest_rc_tag $version polkadot)
 
