@@ -106,12 +106,12 @@ jobs:
       #   with:
       #     filename: .github/ISSUE_TEMPLATE/release.md
 
-      - name: Send Matrix message to ${{ matrix.channel.name }}
-        uses: s3krit/matrix-message-action@70ad3fb812ee0e45ff8999d6af11cafad11a6ecf # v0.0.3
-        # if: steps.create-issue.outputs.url != ''
-        with:
-          room_id: ${{ matrix.channel.room }}
-          access_token: ${{ secrets.RELEASENOTES_MATRIX_V2_ACCESS_TOKEN }}
-          server: m.parity.io
-          message: |
-            Release process for polkadot ${{ steps.compute_tag.outputs.new_tag }} has been started.<br/>
+      # - name: Send Matrix message to ${{ matrix.channel.name }}
+      #   uses: s3krit/matrix-message-action@70ad3fb812ee0e45ff8999d6af11cafad11a6ecf # v0.0.3
+      #   # if: steps.create-issue.outputs.url != ''
+      #   with:
+      #     room_id: ${{ matrix.channel.room }}
+      #     access_token: ${{ secrets.RELEASENOTES_MATRIX_V2_ACCESS_TOKEN }}
+      #     server: m.parity.io
+      #     message: |
+      #       Release process for polkadot ${{ steps.compute_tag.outputs.new_tag }} has been started.<br/>
