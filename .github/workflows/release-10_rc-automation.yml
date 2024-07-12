@@ -42,7 +42,7 @@ jobs:
           if [[ -z "${{ inputs.version }}" ]]; then
             version=v$(get_polkadot_node_version_from_code)
           else
-            version=${{ inputs.version }}
+            version=$(filter_version_from_input ${{ inputs.version }})
           fi
           #version=$(get_version_from_ghref ${GITHUB_REF})
           echo "$version"
