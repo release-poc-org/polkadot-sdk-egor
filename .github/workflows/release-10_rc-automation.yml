@@ -39,7 +39,7 @@ jobs:
 
           # Get last rc tag if exists, else set it to {version}-rc1
 
-          if [[ -z "${{ inputs.version }}"]]; then
+          if [[ -z "${{ inputs.version }}" ]]; then
             version=v$(get_polkadot_node_version_from_code)
           else
             version=${{ inputs.version }}
