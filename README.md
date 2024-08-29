@@ -38,7 +38,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/paritytec
 
 ## 🚀 Releases
 
-![Current Stable Release](https://img.shields.io/badge/Current%20Stable%20Release-2407-green)&nbsp;&nbsp;![Next Stable Release (2409)](https://img.shields.io/badge/Next%20Stable%20Release%20%282409%29-2024/09/25-orange)
+![Current Stable Release](https://img.shields.io/badge/Current%20Stable%20Release-2407_1-green)&nbsp;&nbsp;![Next Stable Release (2409)](https://img.shields.io/badge/Next%20Stable%20Release%20%282409%29-2024/09/25-orange)
 
 > [!NOTE]
 > Our release process is still Work-In-Progress and may not yet reflect the aspired outline
