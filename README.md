@@ -10,7 +10,7 @@
 forks](https://img.shields.io/github/forks/paritytech/polkadot-sdk)
 
 <!-- markdownlint-disable-next-line MD013 -->
-[![StackExchange](https://img.shields.io/badge/StackExchange-Community%20&%20Support-222222?logo=stackexchange)](https://substrate.stackexchange.com/)&nbsp;&nbsp;![GitHub contributors](https://img.shields.io/github/contributors/paritytech/polkadot-sdk)&nbsp;&nbsp;![GitHub commit activity](https://img.shields.io/github/commit-activity/m/paritytech/polkadot-sdk)&nbsp;&nbsp;![GitHub last commit](https://img.shields.io/github/last-commit/paritytech/polkadot-sdk)&nbsp;&nbsp;![Current Stable Release](https://img.shields.io/badge/Current%20Stable%20Release-2409-green)&nbsp;&nbsp;![Next Stable Release (2412)](https://img.shields.io/badge/Next%20Stable%20Release%20%282412%29-18/12/24-orange)
+[![StackExchange](https://img.shields.io/badge/StackExchange-Community%20&%20Support-222222?logo=stackexchange)](https://substrate.stackexchange.com/)&nbsp;&nbsp;![GitHub contributors](https://img.shields.io/github/contributors/paritytech/polkadot-sdk)&nbsp;&nbsp;![GitHub commit activity](https://img.shields.io/github/commit-activity/m/paritytech/polkadot-sdk)&nbsp;&nbsp;![GitHub last commit](https://img.shields.io/github/last-commit/paritytech/polkadot-sdk)
 
 > The Polkadot SDK repository provides all the components needed to start building on the
 > [Polkadot](https://polkadot.network) network, a multi-chain blockchain platform that enables
@@ -37,6 +37,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/paritytec
   * [Polkadot Wiki -> Build](https://wiki.polkadot.network/docs/build-guide)
 
 ## 🚀 Releases
+
+![Current Stable Release](https://img.shields.io/badge/Current%20Stable%20Release-2407-green)&nbsp;&nbsp;![Next Stable Release (2409)](https://img.shields.io/badge/Next%20Stable%20Release%20%282409%29-2024/09/25-orange)
 
 > [!NOTE]
 > Our release process is still Work-In-Progress and may not yet reflect the aspired outline
